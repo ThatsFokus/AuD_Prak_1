@@ -9,7 +9,7 @@ import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
 
 /**
- * Implementaion of quickselect algorithm w/o sorting the whole array
+ * Implementation von Quickselect zum Sortieren der Dateien
  * 
  * @author Fabian Arens, Yannic Brylankowski
  */

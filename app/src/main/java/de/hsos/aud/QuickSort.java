@@ -17,6 +17,12 @@ public class QuickSort extends Sequence {
 		super(fName);
 	}
 
+	/**
+	 * 
+	 * @param l unteres limit
+	 * @param h oberes limit
+	 * @return index des pivot elementes
+	 */
 	private int partition(int l, int h) {
 		int p_index = h;
 		int pivot = a[p_index];
@@ -31,29 +37,13 @@ public class QuickSort extends Sequence {
 		swap(p, p_index);
 		return p;
 	}
-	/*
-	int partition_median(int l, int h) {
 
-		int p_index = medianOfThree(l, h);
-		int pivot = a[p_index];
-
-		int p = l;
-		for (int i = l; i < h; i++) {
-			if (a[i] <= pivot) {
-				swap(i, p);
-				p++;
-			}
-		}
-		swap(p, p_index);
-		return p;
-	}
-	*/
 	private void run_qsort(int l, int h) {
-		// simulate a stack
+		// Simuliere einen Stack
 		int[] stack = new int[h - l + 1];
 		int top = 0;
 
-		// push lower and higher limit
+		// schiebe unteres und oberes Limit
 		stack[++top] = l;
 		stack[++top] = h;
 
@@ -84,6 +74,12 @@ public class QuickSort extends Sequence {
             return m;
     }
 
+	/**
+	 * Anwenden des median of three Algorithmusses auf den bestehenden Array
+	 * @param l minimum index aus dem Substack
+	 * @param h Maximum index aus dem Substack
+	 * @return index des pivot elementes
+	 */
     protected int partition_median(int l, int h) {
         int p_index = medianOfThree(l, (h - l) / 2 + l, h);
 
@@ -101,6 +97,9 @@ public class QuickSort extends Sequence {
         return p_index;
     }
 
+	/**
+	 * Ueberschreiben von  sort
+	 */
 	public void sort() {
 		try {
 			// recursive_quicksort(1, a[0] - 1);
@@ -112,9 +111,10 @@ public class QuickSort extends Sequence {
 			System.out.println(e.toString());
 		}
 	}
+
 	/**
 	 * Anwenden des median of three Algorithmusses auf den bestehenden Array
-	 * @param l min index in substack
+	 * @param l minimum index aus dem 
 	 * @param h max index in substack
 	 * @return index des Medians aus drei
 	 */
