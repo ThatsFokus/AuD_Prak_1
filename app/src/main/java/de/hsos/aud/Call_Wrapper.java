@@ -7,7 +7,7 @@ import javax.print.attribute.standard.Media;
  * Konfiguration aus Ausfuehrung von Laufzeittest. Aufruf der Klassen erfolgt
  * ueber statische Methoden.
  * 
- * @author heikerli
+ * @author heikerli, Fabian Arens, Yannic Brylankowski
  */
 public class Call_Wrapper {
 
@@ -72,6 +72,8 @@ public class Call_Wrapper {
 	}
 
 	public static void run_quick_sort_extended() {
+		//TestSuite 1
+		
 		QuickSort.run_test("data/TestSuite1/sample1_no_dups.txt");
 		QuickSort.run_test("data/TestSuite1/sample2_no_dups.txt");
 		QuickSort.run_test("data/TestSuite1/sample3_no_dups.txt");
@@ -82,7 +84,8 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite1/sample8_no_dups.txt");
 		QuickSort.run_test("data/TestSuite1/sample9_no_dups.txt");
 		QuickSort.run_test("data/TestSuite1/sample10_no_dups.txt");
-
+		
+		//Test Suite 2
 		QuickSort.run_test("data/TestSuite2/sample1_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample2_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample3_wc.txt");
@@ -93,7 +96,9 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite2/sample8_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample9_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample10_wc.txt");
+		
 
+		//Test Suite 3
 		QuickSort.run_test("data/TestSuite3/sample1_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample2_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample3_random.txt");
@@ -107,6 +112,8 @@ public class Call_Wrapper {
 	}
 
 	public static void run_quick_sort_on_sorted(){
+		//Test Suite 1
+		
 		QuickSort.run_test("data/TestSuite1/sample1_no_dups_sorted.txt");
 		QuickSort.run_test("data/TestSuite1/sample2_no_dups_sorted.txt");
 		QuickSort.run_test("data/TestSuite1/sample3_no_dups_sorted.txt");
@@ -117,7 +124,8 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite1/sample8_no_dups_sorted.txt");
 		QuickSort.run_test("data/TestSuite1/sample9_no_dups_sorted.txt");
 		QuickSort.run_test("data/TestSuite1/sample10_no_dups_sorted.txt");
-	
+		
+		//Test Suite 2
 		QuickSort.run_test("data/TestSuite2/sample1_wc_sorted.txt");
 		QuickSort.run_test("data/TestSuite2/sample2_wc_sorted.txt");
 		QuickSort.run_test("data/TestSuite2/sample3_wc_sorted.txt");
@@ -128,13 +136,14 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite2/sample8_wc_sorted.txt");
 		QuickSort.run_test("data/TestSuite2/sample9_wc_sorted.txt");
 		QuickSort.run_test("data/TestSuite2/sample10_wc_sorted.txt");
-
+		
+		//Test Suite 3
 		QuickSort.run_test("data/TestSuite3/sample1_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample2_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample3_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample4_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample5_random_sorted.txt");
-		// QuickSort.run_test("data/TestSuite3/sample6_random_sorted.txt"); //no data to proccess
+		QuickSort.run_test("data/TestSuite3/sample6_random_sorted.txt"); //no data to proccess
 		QuickSort.run_test("data/TestSuite3/sample7_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample8_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample9_random_sorted.txt");
@@ -163,6 +172,6 @@ public class Call_Wrapper {
 		// run_quick_sort_dups();
 		
 		// FOR SAFETY REASONS: LEAVE COMMENTED OUT!!!
-		//run_quick_sort_on_sorted();
+		// run_quick_sort_on_sorted();
 	}
 }

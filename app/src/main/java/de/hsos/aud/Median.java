@@ -11,7 +11,7 @@ import java.lang.management.ThreadMXBean;
 /**
  * Implementaion of quickselect algorithm w/o sorting the whole array
  * 
- * @author David Frewin, Joshua Ullrich
+ * @author Fabian Arens, Yannic Brylankowski
  */
 
 public class Median extends Sequence {

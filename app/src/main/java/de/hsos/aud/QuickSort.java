@@ -4,7 +4,7 @@ package de.hsos.aud;
 /**
  * Implementation of quicksort algorithm
  * 
- * @author David Frewin, Joshua Ullrich
+ * @author Fabian Arens, Yannic Brylankowski
  */
 
 public class QuickSort extends Sequence {
@@ -31,12 +31,10 @@ public class QuickSort extends Sequence {
 		swap(p, p_index);
 		return p;
 	}
+	/*
+	int partition_median(int l, int h) {
 
-	private int partition_median(int l, int h) {
-		Median m = new Median(this.a); // TODO - use median only on a[l:h]
-		m.sort();
-
-		int p_index = m.MedianIndex;
+		int p_index = medianOfThree(l, h);
 		int pivot = a[p_index];
 
 		int p = l;
@@ -49,35 +47,8 @@ public class QuickSort extends Sequence {
 		swap(p, p_index);
 		return p;
 	}
-
+	*/
 	private void run_qsort(int l, int h) {
-		// simulate a stack
-		int[] stack = new int[h - l + 1];
-		int top = 0;
-
-		// push lower and higher limit
-		stack[++top] = l;
-		stack[++top] = h;
-
-		while (top != 0) { // run until stack is completely empty
-			// pop lower and higher limit
-			h = stack[top--];
-			l = stack[top--];
-
-			int pivot = partition(l, h);
-			if (pivot - 1 > l) {
-				stack[++top] = l;
-				stack[++top] = pivot - 1;
-			}
-
-			if (pivot + 1 < h) {
-				stack[++top] = pivot + 1;
-				stack[++top] = h;
-			}
-		}
-	}
-
-	private void run_qsort_median(int l, int h) {
 		// simulate a stack
 		int[] stack = new int[h - l + 1];
 		int top = 0;
@@ -104,16 +75,56 @@ public class QuickSort extends Sequence {
 		}
 	}
 
+	int medianOfThree(int l, int m, int h) {
+        if ((a[l] > a[h]) ^ (a[l] > a[m])) 
+            return l;
+        else if ((a[h] < a[l]) ^ (a[h] < a[m])) 
+            return h;
+        else
+            return m;
+    }
+
+    protected int partition_median(int l, int h) {
+        int p_index = medianOfThree(l, (h - l) / 2 + l, h);
+
+        swap(p_index, l);
+        p_index = l;
+
+        for (int i = l + 1; i <= h; i++) {
+            if (a[i] <= a[p_index]) {
+                swap(i, p_index + 1);
+                swap(p_index, p_index + 1);
+                p_index++;
+            }
+        }
+
+        return p_index;
+    }
+
 	public void sort() {
 		try {
 			// recursive_quicksort(1, a[0] - 1);
 			// a = new int[] {234, 456, 234, 643, 21123, 65 };
 			// System.out.println(java.util.Arrays.toString(a));
-			run_qsort(1, a[0]);
+			run_qsort(1, this.n);
 			// System.out.println(java.util.Arrays.toString(a));
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
+	}
+	/**
+	 * Anwenden des median of three Algorithmusses auf den bestehenden Array
+	 * @param l minimun half 
+	 * @return index of median of three
+	 */
+	int medianOfThree(int l, int h) {
+		int m = (int)((h - l) / 2 + l);
+		if ((this.a[l] > this.a[h]) ^ (this.a[l] > this.a[m])) 
+			return l;
+		else if ((this.a[h] < this.a[l]) ^ (this.a[h] < this.a[m])) 
+			return h;
+		else
+			return m;
 	}
 
 	/**
@@ -126,7 +137,7 @@ public class QuickSort extends Sequence {
 		QuickSort qs = new QuickSort(fName);
 		/* Sortierfunktion aufrufen */
 		qs.run_sort(fName);
-		//qs.backup(fName, "_sorted");
+		qs.backup(fName, "_sorted");
 		// ss.backup(fName, "_sorted");
 	}
 }
