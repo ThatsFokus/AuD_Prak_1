@@ -114,8 +114,9 @@ public class QuickSort extends Sequence {
 	}
 	/**
 	 * Anwenden des median of three Algorithmusses auf den bestehenden Array
-	 * @param l minimun half 
-	 * @return index of median of three
+	 * @param l min index in substack
+	 * @param h max index in substack
+	 * @return index des Medians aus drei
 	 */
 	int medianOfThree(int l, int h) {
 		int m = (int)((h - l) / 2 + l);
