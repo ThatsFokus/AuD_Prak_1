@@ -38,6 +38,11 @@ public class QuickSort extends Sequence {
 		return p;
 	}
 
+	/**
+	 * 
+	 * @param l oberes limit
+	 * @param h unteres limit
+	 */
 	private void run_qsort(int l, int h) {
 		// Simuliere einen Stack
 		int[] stack = new int[h - l + 1];
@@ -47,12 +52,12 @@ public class QuickSort extends Sequence {
 		stack[++top] = l;
 		stack[++top] = h;
 
-		while (top != 0) { // run until stack is completely empty
-			// pop lower and higher limit
+		while (top != 0) { // Laufen lassen bis Stapel leer ist
+			// pop aus unterem und oberem limit
 			h = stack[top--];
 			l = stack[top--];
 
-			int pivot = partition_median(l, h);
+			int pivot = partition(l, h);
 			if (pivot - 1 > l) {
 				stack[++top] = l;
 				stack[++top] = pivot - 1;
@@ -65,6 +70,13 @@ public class QuickSort extends Sequence {
 		}
 	}
 
+	/**
+	 * 
+	 * @param l unteres limit
+	 * @param m mittlerer mittelwert
+	 * @param h oberes limit
+	 * @return index des Median aus Drei
+	 */
 	int medianOfThree(int l, int m, int h) {
         if ((a[l] > a[h]) ^ (a[l] > a[m])) 
             return l;
@@ -74,6 +86,39 @@ public class QuickSort extends Sequence {
             return m;
     }
 
+	private int split(int l, int r) {
+		/* l, r sind die Bereichsgrenzen. */
+		int p = (l + r) / 2; /* mittleren Index nehmen oder ... würfeln */
+		/* a[p] ist Pivot */
+		/* Ziel: alle groesseren Elemente sind oberhalb von a[p] */
+		this.swap(p, l); /* Teilungselement an Anfang tauschen */ // uncommented a from parameters
+		p = l;
+		for (int i = l + 1; i <= r; i++) {
+			if (a[i] <= a[p]) {
+				/* Element nach vorne schieben */
+				swap(i, p + 1);
+				swap(p, p + 1); // uncommented 'a' from parameters
+				p = p + 1;
+			}
+		}
+		return p;
+	}
+
+	public int find_kth(int l, int r) {
+		int n = r-l; // Länge/Größe des Felds
+		int k = (r-l) / 2; // Pivot-Element festlegen
+		while (true) {
+			int p = split(l, r);
+			if (p < k) { // k-tes im oberen Teilbereich suchen
+				l = p + 1; // linke Suchbereichsgrenze anpassen
+			} else if (p == k) { // jetzt Volltreffer, d.h. p == k:
+				return (p);
+			} else { // k < p => im unteren Bereich suchen
+				r = p - 1; // rechte Suchbereichsgrenze anpassen
+			}
+		}
+	}
+
 	/**
 	 * Anwenden des median of three Algorithmusses auf den bestehenden Array
 	 * @param l minimum index aus dem Substack
@@ -81,7 +126,7 @@ public class QuickSort extends Sequence {
 	 * @return index des pivot elementes
 	 */
     protected int partition_median(int l, int h) {
-        int p_index = medianOfThree(l, (h - l) / 2 + l, h);
+        int p_index = find_kth(l, h);
 
         swap(p_index, l);
         p_index = l;
@@ -118,15 +163,6 @@ public class QuickSort extends Sequence {
 	 * @param h max index in substack
 	 * @return index des Medians aus drei
 	 */
-	int medianOfThree(int l, int h) {
-		int m = (int)((h - l) / 2 + l);
-		if ((this.a[l] > this.a[h]) ^ (this.a[l] > this.a[m])) 
-			return l;
-		else if ((this.a[h] < this.a[l]) ^ (this.a[h] < this.a[m])) 
-			return h;
-		else
-			return m;
-	}
 
 	/**
 	 * Durchfuehrung eines Sortierdurchlaufs fuer eine Datei.

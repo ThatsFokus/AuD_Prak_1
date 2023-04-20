@@ -58,7 +58,7 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite1/sample10_no_dups.txt");
 	}
 
-	public static void run_quick_sort_ts2(){
+	public static void run_quick_sort_ts2() {
 		QuickSort.run_test("data/TestSuite2/sample1_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample2_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample3_wc.txt");
@@ -72,8 +72,8 @@ public class Call_Wrapper {
 	}
 
 	public static void run_quick_sort_extended() {
-		//TestSuite 1
-		
+		// TestSuite 1
+
 		QuickSort.run_test("data/TestSuite1/sample1_no_dups.txt");
 		QuickSort.run_test("data/TestSuite1/sample2_no_dups.txt");
 		QuickSort.run_test("data/TestSuite1/sample3_no_dups.txt");
@@ -84,8 +84,8 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite1/sample8_no_dups.txt");
 		QuickSort.run_test("data/TestSuite1/sample9_no_dups.txt");
 		QuickSort.run_test("data/TestSuite1/sample10_no_dups.txt");
-		
-		//Test Suite 2
+
+		// Test Suite 2
 		QuickSort.run_test("data/TestSuite2/sample1_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample2_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample3_wc.txt");
@@ -96,24 +96,23 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite2/sample8_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample9_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample10_wc.txt");
-		
 
-		//Test Suite 3
+		// TestSuite 3
 		QuickSort.run_test("data/TestSuite3/sample1_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample2_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample3_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample4_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample5_random.txt");
-		QuickSort.run_test("data/TestSuite3/sample6_random.txt"); //expect long runtimes for this one
+		QuickSort.run_test("data/TestSuite3/sample6_random.txt"); // expect long runtimes for this one
 		QuickSort.run_test("data/TestSuite3/sample7_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample8_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample9_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample10_random.txt");
 	}
 
-	public static void run_quick_sort_on_sorted(){
-		//Test Suite 1
-		
+	public static void run_quick_sort_on_sorted() {
+		// Test Suite 1
+
 		QuickSort.run_test("data/TestSuite1/sample1_no_dups_sorted.txt");
 		QuickSort.run_test("data/TestSuite1/sample2_no_dups_sorted.txt");
 		QuickSort.run_test("data/TestSuite1/sample3_no_dups_sorted.txt");
@@ -124,8 +123,8 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite1/sample8_no_dups_sorted.txt");
 		QuickSort.run_test("data/TestSuite1/sample9_no_dups_sorted.txt");
 		QuickSort.run_test("data/TestSuite1/sample10_no_dups_sorted.txt");
-		
-		//Test Suite 2
+
+		// Test Suite 2
 		QuickSort.run_test("data/TestSuite2/sample1_wc_sorted.txt");
 		QuickSort.run_test("data/TestSuite2/sample2_wc_sorted.txt");
 		QuickSort.run_test("data/TestSuite2/sample3_wc_sorted.txt");
@@ -136,21 +135,21 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite2/sample8_wc_sorted.txt");
 		QuickSort.run_test("data/TestSuite2/sample9_wc_sorted.txt");
 		QuickSort.run_test("data/TestSuite2/sample10_wc_sorted.txt");
-		
-		//Test Suite 3
+
+		// Test Suite 3
 		QuickSort.run_test("data/TestSuite3/sample1_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample2_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample3_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample4_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample5_random_sorted.txt");
-		QuickSort.run_test("data/TestSuite3/sample6_random_sorted.txt"); //no data to proccess
+		QuickSort.run_test("data/TestSuite3/sample6_random_sorted.txt"); // no data to proccess
 		QuickSort.run_test("data/TestSuite3/sample7_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample8_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample9_random_sorted.txt");
 		QuickSort.run_test("data/TestSuite3/sample10_random_sorted.txt");
 	}
 
-	private static void run_quick_sort_dups(){
+	private static void run_quick_sort_dups() {
 		QuickSort.run_test("data/TestSuiteDups/sample1_dups.txt");
 		QuickSort.run_test("data/TestSuiteDups/sample2_dups.txt");
 		QuickSort.run_test("data/TestSuiteDups/sample3_dups.txt");
@@ -163,15 +162,15 @@ public class Call_Wrapper {
 	 */
 	public static void main(String[] args) {
 
-		//run_small();
+		// run_small();
 
 		// run_selection_sort();
 		// run_median();
 		// run_quick_sort();
 		run_quick_sort_extended();
 		// run_quick_sort_dups();
-		
+
 		// FOR SAFETY REASONS: LEAVE COMMENTED OUT!!!
-		// run_quick_sort_on_sorted();
+		run_quick_sort_on_sorted();
 	}
 }
