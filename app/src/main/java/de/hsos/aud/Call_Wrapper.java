@@ -157,6 +157,19 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuiteDups/sample5_dups.txt");
 	}
 
+	private static void run_quick_sort_median(){
+		QuickSortMedian.run_test("data/TestSuite1/sample1_no_dups.txt");
+		QuickSortMedian.run_test("data/TestSuite1/sample2_no_dups.txt");
+		QuickSortMedian.run_test("data/TestSuite1/sample3_no_dups.txt");
+		QuickSortMedian.run_test("data/TestSuite1/sample4_no_dups.txt");
+		QuickSortMedian.run_test("data/TestSuite1/sample5_no_dups.txt");
+		QuickSortMedian.run_test("data/TestSuite1/sample6_no_dups.txt");
+		QuickSortMedian.run_test("data/TestSuite1/sample7_no_dups.txt");
+		QuickSortMedian.run_test("data/TestSuite1/sample8_no_dups.txt");
+		QuickSortMedian.run_test("data/TestSuite1/sample9_no_dups.txt");
+		QuickSortMedian.run_test("data/TestSuite1/sample10_no_dups.txt");
+	}
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -167,10 +180,12 @@ public class Call_Wrapper {
 		// run_selection_sort();
 		// run_median();
 		// run_quick_sort();
-		run_quick_sort_extended();
+		// run_quick_sort_extended();
 		// run_quick_sort_dups();
+		run_quick_sort_median();
+		run_quick_sort_median();
 
 		// FOR SAFETY REASONS: LEAVE COMMENTED OUT!!!
-		run_quick_sort_on_sorted();
+		//run_quick_sort_on_sorted();
 	}
 }
