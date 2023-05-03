@@ -84,7 +84,7 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite1/sample8_no_dups.txt");
 		QuickSort.run_test("data/TestSuite1/sample9_no_dups.txt");
 		QuickSort.run_test("data/TestSuite1/sample10_no_dups.txt");
-
+/*
 		// Test Suite 2
 		QuickSort.run_test("data/TestSuite2/sample1_wc.txt");
 		QuickSort.run_test("data/TestSuite2/sample2_wc.txt");
@@ -108,6 +108,7 @@ public class Call_Wrapper {
 		QuickSort.run_test("data/TestSuite3/sample8_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample9_random.txt");
 		QuickSort.run_test("data/TestSuite3/sample10_random.txt");
+		*/
 	}
 
 	public static void run_quick_sort_on_sorted() {
@@ -180,10 +181,10 @@ public class Call_Wrapper {
 		// run_selection_sort();
 		// run_median();
 		// run_quick_sort();
-		// run_quick_sort_extended();
+		run_quick_sort_extended();
 		// run_quick_sort_dups();
-		run_quick_sort_median();
-		run_quick_sort_median();
+		// run_quick_sort_median();
+		// run_quick_sort_median();
 
 		// FOR SAFETY REASONS: LEAVE COMMENTED OUT!!!
 		//run_quick_sort_on_sorted();
